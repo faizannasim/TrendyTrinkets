@@ -1,3 +1,364 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+
+
+/* Example for a general background color */
+body {
+    background: linear-gradient(to right, #a9b88f, #000000); 
+  }
+  .name {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Adjust this for spacing */
+    background: linear-gradient(to right, #043d32, #61588fb5);
+    color: wheat;
+    border: 2px solid #3498db;
+    border-radius: 2px;
+    padding: 10px;
+    height: 35px;
+  }
+  .hello, .table, .button-container, .food-furniture {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+  }
+  .p {
+    font-family: 'Times New Roman', Times, serif;
+    font-display: swap;
+    font-size: 20px;
+    font-weight: 900;
+    margin-right: 10px;
+  }
+  
+  .btn {
+    background: linear-gradient(to right, #1abc9c, #3498db);
+    font-size: 18px;
+    cursor: pointer;
+    border: 2px solid #3498db;
+    padding: 8px 16px; /* Smaller padding for Amazon-like feel */
+    border-radius: 10px;
+  }
+  
+  /* Responsive Navbar */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    background: #1abc9c;
+    padding: 10px;
+    font-size: 18px;
+  }
+  
+  .navbar a {
+    color: wheat;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+  }
+  
+  .navbar a:hover {
+    background: #3498db;
+  }
+  
+  .navbar-toggle {
+    display: none; /* Hidden by default */
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  .navbar-links {
+    display: flex;
+    gap: 15px;
+  }
+  
+  @media only screen and (max-width: 768px) {
+    .navbar {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .navbar-links {
+      flex-direction: column;
+      display: none; /* Hide links on small screens */
+    }
+  
+    .navbar-toggle {
+      display: block; /* Show toggle button */
+    }
+  
+    .navbar.active .navbar-links {
+      display: flex; /* Show links when navbar is active */
+    }
+  }
+  
+  /* Grid */
+  .grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 20px;
+  }
+  
+  .srch {
+    display: flex;
+    justify-content: center; /* Center search bar */
+    align-items: center;
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  
+  .srch input {
+    padding: 8px;
+    width: 300px; /* Adjusted width for better visibility */
+    border: 2px solid #3498db;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    font-size: 14px;
+  }
+  
+  .srch input:hover {
+    border-color: #1abc9c;
+  }
+  
+  .srch input:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(29, 203, 14, 0.5);
+  }
+  
+  /* Card Styling */
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 16px;
+  }
+  
+  .card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    padding: 12px;
+    flex: 1 1 calc(25% - 16px); /* Four cards per row */
+    box-sizing: border-box;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    text-align: center;
+  }
+  
+  .card img {
+    width: 100%;
+    height: 200px; /* Fixed height for consistency */
+    object-fit: contain; /* Keep image ratio intact */
+  }
+  
+  .card h2 {
+    font-size: 1rem;
+    margin: 10px 0;
+    color: #333;
+  }
+  
+  .card p {
+    margin: 5px 0;
+    color: #666;
+    font-size: 0.9rem;
+  }
+  
+  .card .price {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-top: 5px;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  .prd {
+    text-align: center; /* Center the text */
+    width: 100%; /* Make sure it takes full width */
+    margin: 20px 0; /* Add some margin for spacing */
+    font-size: 1.2rem; /* Increase font size for visibility */
+    color: #ffffff; /* Optional: Change text color for better visibility */
+  }
+  
+  /* Responsive Layout */
+  @media only screen and (max-width: 1024px) {
+    .card {
+      flex: 1 1 calc(33.33% - 16px); /* Three cards per row on medium screens */
+    }
+  }
+  
+  @media only screen and (max-width: 768px) {
+    .card {
+      flex: 1 1 calc(50% - 16px); /* Two cards per row on small screens */
+    }
+  }
+  
+  @media only screen and (max-width: 480px) {
+    .card {
+      flex: 1 1 100%; /* One card per row on very small screens */
+    }
+  
+    .name, .grid, .srch, .btn {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .btn {
+      font-size: 14px;
+      padding: 6px 12px; /* Smaller button for small screens */
+    }
+  }
+  
+  .buttons{
+    text-align: center;
+    
+  }
+  .button{
+    width: 50px;
+    height: 50px;
+    
+    color: white;
+    border-radius: 5px;
+    border: none ;
+    font-size: 15px;
+    margin: 20px;
+  }
+  
+  
+  /* Button Styles */
+  button {
+    background: linear-gradient(to right, #1abc9c, #3498db);
+    border: none; /* Remove default border */
+    color: white; /* White text */
+    padding: 10px 20px; /* Padding for button */
+    text-align: center; /* Center text */
+    text-decoration: none; /* Remove underline */
+    display: inline-block; /* Make it inline-block */
+    font-size: 16px; /* Font size */
+    margin: 10px 0; /* Margin for spacing */
+    cursor: pointer; /* Pointer cursor on hover */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s; /* Smooth background transition */
+  }
+  
+  /* Button Hover Effect */
+  button:hover {
+    background-color: #45a049; /* Darker green on hover */
+  }
+  
+  /* Button Disabled Styles (if needed) */
+  button:disabled {
+    background-color: #ccc; /* Grey background for disabled */
+    cursor: not-allowed; /* Not allowed cursor */
+  }
+  
+  .cart-section {
+    margin-top: 20px; /* Space above the cart */
+    padding: 15px; /* Padding inside the cart section */
+    border: 1px solid #ddd; /* Light border around the cart */
+    border-radius: 5px; /* Rounded corners */
+    background-color: #f9f9f9; /* Light background */
+  }
+  
+  .cart-item {
+    margin: 5px 0; /* Space between cart items */
+  }
+  
+  .cart-item p {
+    margin: 0; /* Remove default margin */
+  }
+  
+  h3 {
+    color: #4CAF50; /* Green color for total */
+  }
+  
+  /* No Products Found */
+  .prd {
+    grid-column: span 3; /* Span across all columns */
+    text-align: center; /* Center text */
+    font-size: 18px;
+    color: #999; /* Gray color */
+  }
+  .crt {
+    
+    padding: 20px; /* Padding inside the cart section */
+    border: 1px solid #eaeaea; /* Light border around the cart */
+    border-radius: 8px; /* Rounded corners */
+    background-color: #fff; /* White background */
+    
+    max-width: 800px; /* Maximum width for larger screens */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  }
+  
+  .crt h2 {
+    margin: 0 0 20px; /* Margin below the heading */
+    font-size: 26px; /* Font size for the heading */
+    color: #333; /* Dark color for the heading */
+    border-bottom: 2px solid #f0c14b; /* Amazon-like border color */
+   
+  }
+  
+  .crt h3 {
+    margin: 15px 0 0; /* Space above the total amount */
+    font-size: 20px; /* Font size for the total amount */
+    color: #b12704; /* Amazon-like total amount color */
+  }
+  
+  .crt p {
+    margin: 5px 0; /* Space between cart items */
+    font-size: 16px; /* Font size for cart items */
+    color: #555; /* Slightly lighter color for item text */
+  }
+  
+  .crt div {
+    display: flex; /* Use flexbox for item layout */
+   
+    align-items: center; /* Center items vertically */
+    padding: 15px 0; /* Padding for each item */
+    border-bottom: 1px solid #f0f0f0; /* Light border between items */
+  }
+  
+  .crt div:last-child {
+    border-bottom: none; /* Remove border for the last item */
+  }
+  
+  .crt img {
+    width: 60px; /* Fixed size for product images */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 15px; /* Space between image and text */
+  }
+  
+  .crt .item-details {
+    flex: 1; /* Allow item details to take available space */
+  }
+  
+  .crt .remove-button {
+    background-color: #f0c14b; /* Amazon-like button color */
+    border: 1px solid #a88734; /* Border color */
+    color: #111; /* Text color */
+    padding: 5px 10px; /* Padding for button */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+  }
+  
+  .crt .remove-button:hover {
+    background-color: #ddb347; /* Darker shade on hover */
+  }
+  
+  .crt .total {
+    font-size: 18px; /* Font size for total amount */
+    font-weight: bold; /* Bold text for emphasis */
+    margin-top: 20px; /* Space above total */
+  }
+  .footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    border-radius: 9px;
+    background: linear-gradient(to right, #043d32, #61588fb5);
+  
+    border: 2px solid #3498db;
+    border-radius: 2px;
+  }
